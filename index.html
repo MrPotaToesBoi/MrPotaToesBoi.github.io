@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,sans-serif;background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);color:#fff;min-height:100vh}
+header{padding:60px 20px;text-align:center}
+header h1{font-size:2.5rem;font-weight:600}
+header p{opacity:.8;margin-top:10px}
+main{max-width:1200px;margin:0 auto;padding:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.video-card{background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border-radius:16px;overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,.3);transition:transform .3s}
+.video-card:hover{transform:translateY(-6px)}
+.video-card video{width:100%;height:auto;display:block}
+.video-info{padding:16px}
+.video-info h3{font-size:1.1rem;font-weight:500;margin-bottom:6px}
+.video-info span{font-size:.9rem;opacity:.7}
+footer{text-align:center;padding:30px 20px;opacity:.6;font-size:.9rem}
+</style>
+</head>
+<body>
+<header>
+<h1>Your Name</h1>
+<p>Video Editor Portfolio</p>
+</header>
+<main id="videoGrid"></main>
+<footer>© 2026 Your Name</footer>
+<script>
+const videos=[
+{title:"Project One",date:"2025",src:"videos/video1.mp4"},
+{title:"Project Two",date:"2025",src:"videos/video2.mp4"}
+]
+const grid=document.getElementById('videoGrid')
+videos.forEach(v=>{
+const card=document.createElement('div')
+card.className='video-card'
+card.innerHTML=`<video controls src="${v.src}"></video><div class="video-info"><h3>${v.title}</h3><span>${v.date}</span></div>`
+grid.appendChild(card)
+})
+</script>
+</body>
+</html>
